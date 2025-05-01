@@ -1,0 +1,39 @@
+.navbar {
+  background-color: #000000 !important; /* Negro puro */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Suave sombra blanca */
+  padding: 15px 20px;
+
+  .navbar-brand {
+    font-family: 'Old London', serif;
+    font-size: 28px;
+    color: #fff !important;
+    letter-spacing: 2px;
+  }
+
+  .navbar-toggler {
+    border: none;
+    outline: none;
+
+    .navbar-toggler-icon {
+      filter: invert(1); /* Hace que el icono hamburguesa sea blanco */
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin: 0 10px;
+
+      .nav-link {
+        color: #ffffff !important;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: #d60000 !important; /* Rojo intenso */
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

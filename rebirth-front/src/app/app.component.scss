@@ -1,0 +1,46 @@
+.footer {
+    background-color: #121212; /* Negro elegante */
+    color: #f5f5f5;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #d60000; /* Rojo distintivo */
+  }
+  
+  .footer p, .footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer .social-icon {
+    color: #f5f5f5;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: 0.3s;
+  }
+  
+  .footer .social-icon:hover {
+    color: #d60000; /* Rojo al pasar el mouse */
+  }
+  
+  .footer-bottom {
+    background-color: #000000;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  

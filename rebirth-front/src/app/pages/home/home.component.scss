@@ -1,0 +1,28 @@
+/* Contenedor para las opciones de color */
+.color-option {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  /* Estilo de la imagen que representa el color */
+  .color-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+  }
+  
+  /* Estilo para la "X" si el color no está disponible */
+  .color-unavailable {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el texto "Stock disponible: No" */
+  .stock-unavailable {
+    color: red;
+  }
+  

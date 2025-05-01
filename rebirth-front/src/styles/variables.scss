@@ -1,0 +1,11 @@
+// src/styles/variables.scss
+$main-bg-image: url('../assets/fondo.png');
+$main-bg-color: #121212; // Color de respaldo si la imagen no carga
+
+@font-face {
+    font-family: 'Old London';
+    src: url('../assets/fonts/OldLondon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

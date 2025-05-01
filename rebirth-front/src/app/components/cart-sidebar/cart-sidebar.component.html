@@ -1,0 +1,38 @@
+<div class="cart-sidebar" [class.open]="isOpen">
+  <h2>Carrito de Compras</h2>
+  <button class="close-btn" (click)="toggleCart()">❌</button>
+  
+  <div *ngIf="(cartItems$ | async)?.length; else emptyCart">
+    <div class="cart-item" *ngFor="let item of cartItems$ | async">
+      <!-- Contenedor de imagen + info -->
+      <div class="item-container">
+        <div class="item-image-container">
+          <img class="item-image" [src]="item.imagen_url" [alt]="item.name">
+        </div>
+        
+        <div class="item-info">
+          <span class="item-name">{{ item.name }}</span>
+          <span class="item-price">${{ item.precio }}</span>
+          <span class="item-variant">{{ item.color }} / {{ item.size }}</span>
+        </div>
+      </div>
+      
+      <!-- Controles de cantidad -->
+      <div class="item-controls">
+        <div class="quantity-selector">
+          <button class="quantity-btn" (click)="decreaseQuantity(item.id)">-</button>
+          <span class="quantity">{{ item.cantidad }}</span>
+          <button class="quantity-btn" (click)="increaseQuantity(item.id)">+</button>
+        </div>
+        <button class="remove-btn" (click)="removeItem(item.id)">Remove</button>
+      </div>
+    </div>
+
+    <h3>Subtotal: ${{ subtotal$ | async }}</h3>
+    <button class="checkout-btn">Ir a pagar</button>
+  </div>
+
+  <ng-template #emptyCart>
+    <p class="empty-cart">El carrito está vacío 🛒</p>
+  </ng-template>
+</div>

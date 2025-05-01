@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
+
+            <div class="input-container">
+                <input type="email" [(ngModel)]="email" name="email" #emailModel="ngModel" required email placeholder=" ">
+                <label>Email</label>
+            </div>
+            <div *ngIf="emailModel.invalid && emailModel.touched" class="error">Ingresa un email válido.</div>
+
+            <div class="input-container">
+                <input type="password" [(ngModel)]="password" name="password" #passwordModel="ngModel" required minlength="6" placeholder=" ">
+                <label>Contraseña</label>
+            </div>
+            <div *ngIf="passwordModel.invalid && passwordModel.touched" class="error">
+                <div *ngIf="passwordModel.errors?.['required']">La contraseña es requerida.</div>
+            </div>
+            
+            <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+
+        </form>
+    </div>
+</div>

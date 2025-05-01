@@ -1,0 +1,159 @@
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+
+  &.open {
+    right: 0;
+  }
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  // Cambiado a flex-start para alinear correctamente
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 12px;  // Espacio entre imagen y contenido
+}
+
+// Nuevos estilos para la imagen
+.item-image-container {
+  flex-shrink: 0;  // Evita que se reduzca
+  width: 60px;     // Ancho deseado
+  height: 60px;    // Alto deseado (puedes ajustar)
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+}
+
+// Ajusta el item-info para que ocupe el espacio restante
+.item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .item-name {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .item-price {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .item-variant {
+    font-size: 12px;
+    color: #666;
+  }
+}
+
+.item-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .quantity-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    color: #333;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  .quantity {
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+
+  &:hover {
+    color: #e60000;
+  }
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #28a745;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #666;
+  margin-top: 40px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.item-container {
+  display: flex;
+  align-items: center; /* Asegura alineación vertical */
+  gap: 12px;
+  width: 100%;
+}
+
+.item-image-container {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.item-info {
+  flex-grow: 1;
+}

@@ -1,0 +1,11 @@
+<div *ngIf="cargando">
+  <p>Cargando datos...</p>
+</div>
+
+<div *ngIf="!cargando && usuario">
+  <h2>Mi cuenta</h2>
+  <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+  <p><strong>Email:</strong> {{ usuario.email }}</p>
+
+  <button (click)="logout()">Cerrar sesión</button>
+</div>

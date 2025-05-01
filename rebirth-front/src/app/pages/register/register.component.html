@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="register-container">
+    <h2>Registro</h2>
+    <form #registerForm="ngForm" (ngSubmit)="register()" novalidate>
+      
+      <div class="input-container">
+        <input type="text" [(ngModel)]="name" name="name" #nameCtrl="ngModel" required placeholder=" ">
+        <label>Nombre</label>
+      </div>
+      <div *ngIf="nameCtrl.invalid && nameCtrl.touched" class="error">El nombre es obligatorio.</div>
+
+      <div class="input-container">
+        <input type="email" [(ngModel)]="email" name="email" #emailCtrl="ngModel" required email placeholder=" ">
+        <label>Email</label>
+      </div>
+      <div *ngIf="emailCtrl.invalid && emailCtrl.touched" class="error">Ingresa un email válido.</div>
+
+      <div class="input-container">
+        <input type="password" [(ngModel)]="password" name="password" #passwordCtrl="ngModel" required minlength="6" placeholder=" ">
+        <label>Contraseña</label>
+      </div>
+      <div *ngIf="passwordCtrl.invalid && passwordCtrl.touched" class="error">
+        La contraseña debe tener al menos 6 caracteres.
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
+      <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+  </div>
+</div>

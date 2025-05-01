@@ -1,0 +1,61 @@
+<div class="checkout-container">
+    <h2>Express Checkout</h2>
+  
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Contact</h3>
+        <input formControlName="email" type="email" placeholder="Email" required />
+      </div>
+  
+      <!-- Delivery Info -->
+      <div class="delivery-info">
+        <h3>Delivery</h3>
+        <select formControlName="country">
+          <option>Colombia</option>
+        </select>
+        <input formControlName="firstName" type="text" placeholder="First name" required />
+        <input formControlName="lastName" type="text" placeholder="Last name" required />
+        <input formControlName="address" type="text" placeholder="Address" required />
+        <input formControlName="city" type="text" placeholder="City" required />
+        <input formControlName="postalCode" type="text" placeholder="Postal code" />
+        <input formControlName="phone" type="text" placeholder="Phone" required />
+      </div>
+  
+      <!-- Shipping Method -->
+      <div class="shipping-method">
+        <h3>Shipping method</h3>
+        <label>
+          <input type="radio" formControlName="shipping" value="priority" /> Worldwide Priority - $12.77
+        </label>
+        <label>
+          <input type="radio" formControlName="shipping" value="ups" /> UPS Worldwide Expedited - $57.65
+        </label>
+      </div>
+  
+      <!-- Payment Method -->
+      <div class="payment-info">
+        <h3>Payment</h3>
+        <label>
+          <input type="radio" formControlName="payment" value="creditCard" /> Credit Card
+        </label>
+        <label>
+          <input type="radio" formControlName="payment" value="paypal" /> PayPal
+        </label>
+        <label>
+          <input type="radio" formControlName="payment" value="shopPay" /> Shop Pay
+        </label>
+      </div>
+  
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <p>Subtotal: $43.50</p>
+        <p>Shipping: {{ getShippingCost() }}</p>
+        <p>Taxes: $7.98</p>
+        <h4>Total: {{ getTotalCost() }}</h4>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  

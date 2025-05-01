@@ -1,0 +1,64 @@
+<div class="container py-5 product-detail-container">
+  <div *ngIf="product; else loading">
+    <div class="row g-4">
+
+            <!-- Carrusel de imágenes -->
+      <div class="col-md-6 d-flex align-items-center">
+        <div id="carouselImages" class="carousel slide w-100" data-bs-ride="carousel">
+          <div class="carousel-inner rounded shadow-sm">
+            <div
+              class="carousel-item"
+              *ngFor="let img of product.imagenes; let i = index"
+              [class.active]="i === 0"
+            >
+              <img [src]="img" class="d-block w-100" alt="{{ product.nombre }}">
+            </div>
+          </div>
+          <!-- Controles -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselImages"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselImages"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Información -->
+      <div class="col-md-6">
+        <h2 class="product-title">{{ product.nombre }}</h2>
+        <p class="product-description">{{ product.descripcion }}</p>
+        <p class="product-price">$ {{ product.precio }}</p>
+        <p class="product-stock">Stock disponible: {{ product.stock }}</p>
+
+        <!-- Botones de acción -->
+        <div class="product-buttons">
+          <button class="btn btn-add-cart" (click)="addToCart()">Añadir al carrito</button>
+          <button class="btn btn-buy-now" [routerLink]="['/compra']">Comprar ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje de carga -->
+  <ng-template #loading>
+    <div class="loading-container">
+      <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </div>
+  </ng-template>
+</div>
